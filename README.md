@@ -41,23 +41,6 @@ longtrailsweather-frontend/
 └── dist/               # Build output (git-ignored)
 ```
 
-## Development
-
-### Prerequisites
-
-- Node.js
-- npm
-
-### Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
 # Deployment
 
 LTWx is deployed to S3 + CloudFront CDN. Deployment scripts are in the `scripts/` directory.

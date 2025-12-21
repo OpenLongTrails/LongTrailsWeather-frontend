@@ -10,6 +10,8 @@ Backend repo: https://github.com/OpenLongTrails/LongTrailsWeather-backend
 
 Detailed eight day forecasts every ~25 miles along several long distance hiking trails. Designed to be reasonably lightweight in order to increase probability of successful page loads for hikers that are on the side of a mountain with one bar of signal.
 
+Currently, each trail's forecast.html is its own Preact page, but in a future version the entire site should probably be one Preact SPA.
+
 ## Supported Trails
 
 - Appalachian Trail
@@ -18,7 +20,7 @@ Detailed eight day forecasts every ~25 miles along several long distance hiking 
 - Long Trail
 - Pacific Crest Trail
 
-## Technology Stack
+## Stack
 
 - **Frontend**: Preact
 - **Build Tool**: Vite
@@ -29,7 +31,7 @@ Detailed eight day forecasts every ~25 miles along several long distance hiking 
 ## Project Structure
 
 ```
-longtrailswx/
+longtrailsweather-frontend/
 ├── src/                # React app source code
 ├── public/             # Static assets (processed by Vite)
 ├── pages/              # Standalone HTML pages (deployed directly)
@@ -43,7 +45,7 @@ longtrailswx/
 
 ### Prerequisites
 
-- Node.js (v18 or higher recommended)
+- Node.js
 - npm
 
 ### Setup
@@ -56,23 +58,14 @@ npm install
 npm run dev
 ```
 
-### Building
-
-```bash
-# Build for production
-npm run build
-```
-
-The build output will be in the `dist/` directory.
-
-## Deployment
+# Deployment
 
 LTWx is deployed to S3 + CloudFront CDN. Deployment scripts are in the `scripts/` directory.
 
 ## Data Sources
 
-- Weather data provided by [Pirate Weather](https://pirate-weather.apiable.io/)
-- Weather icons by Erik Flowers and Lukas Bischoff ([Weather Icons](https://erikflowers.github.io/weather-icons/))
+- Weather data from [Pirate Weather](https://pirate-weather.apiable.io/)
+- [Weather icons](https://erikflowers.github.io/weather-icons/) by Erik Flowers and Lukas Bischoff
 
 ## License
 
@@ -81,4 +74,3 @@ AGPL v3
 ## Contact
 
 ltwx@openlongtrails.org
-

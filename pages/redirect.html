@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Moved</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #f6f6f6;
+    }
+    h1 { color: #333; }
+    p { font-size: 18px; line-height: 1.6; }
+    a { color: #0066cc; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+    #countdown { font-size: 24px; color: #0066cc; font-weight: bold; }
+    #trailName { font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>This page has moved!</h1>
+  <p>The <span id="trailName">trail</span> forecast page is now located at:</p>
+  <p><a id="newUrl" href="forecast.html"></a></p>
+  <p><strong>Please update your bookmarks and links.</strong></p>
+  <p>You will be automatically redirected in <span id="countdown">10</span> seconds...</p>
+  <p><a href="forecast.html">Click here to go there now</a></p>
+
+  <script>
+    // Build full URL
+    const newUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'forecast.html';
+    document.getElementById('newUrl').textContent = newUrl;
+    document.getElementById('newUrl').href = newUrl;
+
+    // Load config to get trail name
+    fetch('config.json')
+      .then(response => response.json())
+      .then(config => {
+        document.getElementById('trailName').textContent = config.name;
+        document.title = `Page Moved - ${config.name} Weather`;
+      })
+      .catch(() => {
+        // If config fails to load, just use generic text
+        document.getElementById('trailName').textContent = 'trail';
+      });
+
+    // Countdown timer
+    let seconds = 10;
+    const countdownEl = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.replace('forecast.html');
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

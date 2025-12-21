@@ -1,0 +1,4 @@
+# Deployment configuration
+
+BUCKET="www.example.com"
+CLOUDFRONT_DISTRIBUTION_ID="E1234567890ABC"

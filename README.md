@@ -4,6 +4,8 @@
 
 Weather forecasts for long distance hikers, updated daily.
 
+Backend repo: https://github.com/OpenLongTrails/LongTrailsWeather-backend
+
 ## Overview
 
 Detailed eight day forecasts every ~25 miles along several long distance hiking trails. Designed to be reasonably lightweight in order to increase probability of successful page loads for hikers that are on the side of a mountain with one bar of signal.

@@ -1,5 +1,7 @@
 # LongTrailsWeather.net
 
+[www.longtrailsweather.net](https://www.longtrailsweather.net)
+
 Weather forecasts for long distance hikers, updated daily.
 
 ## Overview

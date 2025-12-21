@@ -17,6 +17,7 @@ scripts/config.sh
 .env
 .env.local
 .env.production
+.envrc
 
 # IDE
 .vscode/

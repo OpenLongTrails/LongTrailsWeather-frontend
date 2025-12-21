@@ -33,11 +33,11 @@ Currently, each trail's forecast.html is its own Preact page, but in a future ve
 ```
 longtrailsweather-frontend/
 ├── src/                # React app source code
-├── public/             # Static assets (processed by Vite)
-├── pages/              # Standalone HTML pages (deployed directly)
+├── public/             # Static assets
+├── pages/              # Standalone HTML pages
 ├── configs/            # Trail configuration JSON files
 ├── scripts/            # Build and deployment scripts
-├── forecasts/          # Local forecast data for testing (git-ignored)
+├── forecasts/          # Local forecast data for testing
 └── dist/               # Build output (git-ignored)
 ```
 

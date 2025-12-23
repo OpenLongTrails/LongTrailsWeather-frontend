@@ -19,6 +19,7 @@ Currently, each trail's forecast.html is its own Preact page, but in a future ve
 - Colorado Trail
 - Long Trail
 - Pacific Crest Trail
+- Pacific Northwest Trail
 
 ## Stack
 

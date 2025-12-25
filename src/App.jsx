@@ -115,7 +115,7 @@ function App() {
     return <div>Loading...</div>
   }
 
-  const lastModified = dayjs(data.last_modified).tz('America/New_York').format('YYYY-MM-DD HH:mm:ss')
+  const lastModified = dayjs(data.last_modified).tz('America/Los_Angeles').format('YYYY-MM-DD HH:mm:ss') + ' Pacific Time'
 
   return (
     <div>

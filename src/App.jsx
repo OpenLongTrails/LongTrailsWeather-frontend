@@ -214,6 +214,7 @@ function App() {
                 >
                   <i className={`wi wi-forecast-io-${day.icon} weather-icon`}></i>
                   <div className="forecast-content">
+                    {day.alert && <>⚠️ Severe weather alert<br /><br /></>}
                     {convertTemp(day.temperatureHigh)}° / {convertTemp(day.temperatureLow)}°<br />
                     {getPrecipString(day)}<br />
                     {day.summary}

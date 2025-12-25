@@ -208,6 +208,13 @@ function DetailModal({
   const day = detailData.days[dayIndex]
   const gps = detailData.gps
 
+  // Filter alerts that overlap with this day
+  const dayStart = day.time
+  const dayEnd = day.time + 86400
+  const dayAlerts = (detailData.alerts || []).filter(alert =>
+    alert.time < dayEnd && alert.expires > dayStart
+  )
+
   return (
     <div className="vv-modal-overlay" style={modalStyle} onClick={onClose}>
       <div className="vv-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -226,6 +233,20 @@ function DetailModal({
             <button className="modal-close" onClick={onClose}>&times;</button>
           </div>
         </div>
+
+        {/* Severe Weather Alert Section */}
+        {dayAlerts.length > 0 && (
+          <div className="modal-section">
+            <h3>Severe Weather Alert</h3>
+            {dayAlerts.map((alert, idx) => (
+              <div key={idx} className="alert-item">
+                <Row label="Alert" value={alert.title} />
+                <Row label="Severity" value={alert.severity} />
+                <div className="alert-description">{alert.description}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Temperature Section */}
         <div className="modal-section">

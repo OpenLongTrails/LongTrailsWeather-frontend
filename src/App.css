@@ -260,3 +260,23 @@ body.dark-mode .modal-error {
 body.dark-mode .forecast-cell:hover {
   background-color: #3a3a3a;
 }
+
+/* Alert styles */
+.alert-item {
+  margin-bottom: 12px;
+}
+
+.alert-description {
+  font-size: 0.85em;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #fff8e6;
+  border-left: 3px solid #f0a000;
+  white-space: pre-wrap;
+}
+
+body.dark-mode .alert-description {
+  background-color: #3a3520;
+  border-left-color: #d49000;
+}

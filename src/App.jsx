@@ -194,7 +194,7 @@ function App() {
           {data.forecasts.map((forecast, idx) => (
             <tr key={idx}>
               <td>
-                {forecast.location_name && `${forecast.location_name} `}
+                {forecast.location_name && <>{forecast.location_name}<br /></>}
                 ({forecast.lat.toFixed(4)}, {forecast.lon.toFixed(4)})
               </td>
               <td>

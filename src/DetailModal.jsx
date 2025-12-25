@@ -218,6 +218,7 @@ function DetailModal({
   return (
     <div className="vv-modal-overlay" style={modalStyle} onClick={onClose}>
       <div className="vv-modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-scroll-area">
         {/* Header */}
         <div className="modal-header">
           <div>
@@ -228,10 +229,7 @@ function DetailModal({
             </div>}
             {day.summary && <div style={{ marginTop: '8px' }}>{day.summary}</div>}
           </div>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            {day.icon && <i className={`wi wi-forecast-io-${day.icon} weather-icon`}></i>}
-            <button className="modal-close" onClick={onClose}>&times;</button>
-          </div>
+          {day.icon && <i className={`wi wi-forecast-io-${day.icon} weather-icon`}></i>}
         </div>
 
         {/* Severe Weather Alert Section */}
@@ -398,6 +396,8 @@ function DetailModal({
             <Row label="Moon Phase" value={`${day.moonPhase.toFixed(2)} (${getMoonPhaseName(day.moonPhase)})`} />
           )}
         </div>
+        </div>
+        <div className="modal-close-bar" onClick={onClose}>Close</div>
       </div>
     </div>
   )

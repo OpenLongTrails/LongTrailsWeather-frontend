@@ -4,8 +4,10 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-TRAILS=("at" "azt" "ct" "lt" "pct")
+# Get trail list from configs directory
+TRAILS=($(ls "$PROJECT_DIR/configs/"*.json 2>/dev/null | xargs -n1 basename | sed 's/\.json$//'))
 
 echo "Deploying to every trail..."
 

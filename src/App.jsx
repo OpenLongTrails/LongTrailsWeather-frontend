@@ -195,7 +195,17 @@ function App() {
             <tr key={idx}>
               <td>
                 {forecast.location_name && <>{forecast.location_name}<br /></>}
-                ({forecast.lat.toFixed(4)}, {forecast.lon.toFixed(4)})
+                {data.map_url_template ? (
+                  <a
+                    href={data.map_url_template.replace('{{lat}}', forecast.lat).replace('{{lon}}', forecast.lon)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ({forecast.lat.toFixed(4)}, {forecast.lon.toFixed(4)})
+                  </a>
+                ) : (
+                  <>({forecast.lat.toFixed(4)}, {forecast.lon.toFixed(4)})</>
+                )}
               </td>
               <td>
                 <a

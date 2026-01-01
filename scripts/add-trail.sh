@@ -79,6 +79,18 @@ aws s3 cp "$PROJECT_DIR/configs/${TRAIL_CODE}.json" "s3://${BUCKET}/${TRAIL_CODE
   --content-type "application/json" \
   --cache-control "max-age=0"
 
+# Deploy redirect page to S3
+echo "Deploying ${TRAIL_CODE}.html to S3..."
+aws s3 cp "$PROJECT_DIR/pages/redirect.html" "s3://${BUCKET}/${TRAIL_CODE}/${TRAIL_CODE}.html" \
+  --content-type "text/html" \
+  --cache-control "max-age=0"
+
+# Deploy index.html redirect to S3
+echo "Deploying index.html redirect to S3..."
+aws s3 cp "$PROJECT_DIR/pages/index-redirect.html" "s3://${BUCKET}/${TRAIL_CODE}/index.html" \
+  --content-type "text/html" \
+  --cache-control "max-age=0"
+
 # Deploy forecast.html to S3
 echo "Deploying forecast.html to S3..."
 aws s3 cp "$PROJECT_DIR/dist/forecast.html" "s3://${BUCKET}/${TRAIL_CODE}/forecast.html" \

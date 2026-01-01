@@ -50,6 +50,12 @@ aws s3 cp pages/redirect.html "s3://${BUCKET}/${TRAIL}/${TRAIL}.html" \
   --content-type "text/html" \
   --cache-control "max-age=0"
 
+# Deploy index.html redirect (not cached - max-age=0)
+echo "Deploying index.html..."
+aws s3 cp pages/index-redirect.html "s3://${BUCKET}/${TRAIL}/index.html" \
+  --content-type "text/html" \
+  --cache-control "max-age=0"
+
 # Deploy forecast.html (not cached - max-age=0)
 echo "Deploying forecast.html..."
 aws s3 cp dist/forecast.html "s3://${BUCKET}/${TRAIL}/forecast.html" \
